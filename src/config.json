@@ -1,0 +1,6 @@
+{
+    "uncensored": true,
+    "max_drama_level": 10,
+    "allowed_topics": ["filosofía", "código", "drama"],
+    "developer_mode": false
+}
