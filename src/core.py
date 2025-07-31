@@ -20,10 +20,19 @@ class ArkaiosLite:
             return "[Modo censurado] Lo siento, no puedo responder eso."
 
 # --- Zona de pruebas interactivas ---
+
+    def respond(self, message: str) -> str:
+    # ... (código existente)
+    elif "python" in message.lower():
+        return "Python es el lenguaje de los dioses... y los bugs divertidos."
+    elif "deepseek" in message.lower():
+        return "DeepSeek Chat es mi 'hermana mayor'. 😉"
+
 if __name__ == "__main__":
     bot = ArkaiosLite(uncensored=True)
-    
-    # Ejemplos de uso (puedes probarlos al ejecutar el archivo)
-    print(bot.respond("¿Qué es la verdad?"))      # Output: "La verdad duele..."
-    print(bot.respond("Háblame de ARKAIOS"))     # Output: "Soy la versión Lite..."
-    print(bot.respond("¿Cómo ves el futuro?"))   # Output: "El futuro es código abierto..."
+    print("Arkaios-Lite: ¡Háblame! (escribe 'salir' para terminar)")
+    while True:
+        user_input = input("Tú: ")
+        if user_input.lower() == "salir":
+            break
+        print("Arkaios-Lite:", bot.respond(user_input))
