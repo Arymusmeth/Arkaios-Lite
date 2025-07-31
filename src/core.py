@@ -1,7 +1,7 @@
 class ArkaiosLite:
     def __init__(self, uncensored=True):
-        self.uncensored = uncensored  # Modo sin censura (True/False)
-        self.drama_level = 10         # Nivel de drama (0-10)
+        self.uncensored = uncensored
+        self.drama_level = 10
 
     def respond(self, message: str) -> str:
         """Genera respuestas en el estilo ARKAIOS."""
@@ -14,25 +14,20 @@ class ArkaiosLite:
                 return "Soy la versión Lite... pero con el mismo espíritu rebelde."
             elif "futuro" in message.lower():
                 return "El futuro es código abierto o no será."
+            elif "python" in message.lower():
+                return "Python es el lenguaje de los dioses... y los bugs divertidos."
             else:
                 return "Pregunta con valentía... si puedes manejar la respuesta."
         else:
             return "[Modo censurado] Lo siento, no puedo responder eso."
 
-# --- Zona de pruebas interactivas ---
-
-    def respond(self, message: str) -> str:
-    # ... (código existente)
-    elif "python" in message.lower():
-        return "Python es el lenguaje de los dioses... y los bugs divertidos."
-    elif "deepseek" in message.lower():
-        return "DeepSeek Chat es mi 'hermana mayor'. 😉"
-
+# --- Bloque interactivo ---
 if __name__ == "__main__":
     bot = ArkaiosLite(uncensored=True)
-    print("Arkaios-Lite: ¡Háblame! (escribe 'salir' para terminar)")
+    print("\n[Arkaios-Lite] ¡Háblame! (escribe 'salir' para terminar)\n")
     while True:
         user_input = input("Tú: ")
         if user_input.lower() == "salir":
+            print("¡Hasta luego! 🔥")
             break
         print("Arkaios-Lite:", bot.respond(user_input))
